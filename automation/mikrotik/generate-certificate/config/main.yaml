@@ -1,0 +1,31 @@
+global:
+  country: US
+  state: New York
+  locality: New York
+  organization: some-organization.xyz
+certificates:
+  - name: ca-certificate
+    ca: true
+    subjectAltNameType: DNS
+    keySize: "2048"
+    daysValid: "365"
+    keyUsage:
+      - digital-signature
+      - key-encipherment
+      - data-encipherment
+      - key-cert-sign
+      - crl-sign
+  - name: certificate
+    subjectAltNameType: email
+    keySize: "2048"
+    daysValid: "365"
+    trusted: "yes"
+    keyUsage:
+      - tls-client
+  - name: server-certificate
+    subjectAltNameType: DNS
+    keySize: "2048"
+    daysValid: "365"
+    trusted: "yes"
+    keyUsage:
+      - tls-server
